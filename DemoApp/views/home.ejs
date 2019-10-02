@@ -1,0 +1,23 @@
+<% include partials/header %>
+<div class="container text-center">
+<h1>Welcome to XYZ Ltd</h1>
+<h2>Here is a list of employee details</h2>
+
+<% data.forEach(function(person){ %>
+    <div class="card mx-auto mt-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= person.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= person.email %></h6>
+          <p class="card-text"><%= person.address %></p>
+        </div>
+      </div>
+ <% }) %>
+ <form action="/" method="POST" class="mt-2">
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="address" placeholder="Address">
+    <input type="submit" value="Add Employee" class="btn btn-primary">
+</form>
+</div>
+
+ <% include partials/footer %>
